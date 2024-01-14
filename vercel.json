@@ -1,5 +1,11 @@
 {
-  "headers": [
-    { "source": "/api/users/login", "headers": [{ "key": "Access-Control-Allow-Origin", "value": "*" }] }
+  "routes": [
+    {
+      "src": "/api/users/login",
+      "methods": ["OPTIONS"],
+      "headers": [
+        { "key": "Access-Control-Allow-Origin", "value": "*" }
+      ]
+    }
   ]
 }
