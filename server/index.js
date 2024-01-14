@@ -5,43 +5,33 @@ const bodyParser = require("body-parser");
 const cors = require("cors");
 const { bgCyan } = require("colors");
 
-
-
 // Initialize server and middleware
 const connectDb = require("./config/config");
-//dotenv config
+
+// dotenv config
 dotenv.config();
 
-//db config
+// db config
 connectDb();
-//rest object
+
+// Create an Express app
 const app = express();
 
-//middlwares
-const corsOptions = {
-  origin: "*",
-  methods: "GET,HEAD,PUT,PATCH,POST,DELETE",
-  optionsSuccessStatus: 204,
-};
-
-app.use(cors());
-app.use(cors(corsOptions));
+// Middlewares
+app.use(cors()); // Enable CORS for all routes
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(morgan("dev"));
 
-//routes
+// Routes
 app.use("/api/items", require("./routes/itemRoutes"));
 app.use("/api/users", require("./routes/userRoutes"));
 app.use("/api/bills", require("./routes/billsRoute"));
 
-//port
+// Port
 const PORT = process.env.PORT || 8080;
-// server.js
 
-
-
-//listen
+// Listen
 app.listen(PORT, () => {
   console.log(`Server Running On Port ${PORT}`.bgCyan.white);
 });
