@@ -1,17 +1,18 @@
 {
+  "version": 2,
+  "builds": [
+    {
+      "src": "./index.js",
+      "use": "@vercel/node"
+    }
+  ],
   "routes": [
     {
-      "src": "/api/users/register",
-      "methods": ["OPTIONS"],
+      "src": "/(.*)",
+      "dest": "./index.js",
+      "methods": ["GET", "POST", "PUT", "DELETE", "PATCH", "OPTIONS"],
       "headers": {
-        "Access-Control-Allow-Origin": "https://dent-invent-eefl.vercel.app"
-      }
-    },
-    {
-      "src": "/api/users/login",
-      "methods": ["OPTIONS"],
-      "headers": {
-        "Access-Control-Allow-Origin": "https://dent-invent-eefl.vercel.app"
+        "Access-Control-Allow-Origin": "*"
       }
     }
   ]
