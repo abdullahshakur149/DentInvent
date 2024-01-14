@@ -18,7 +18,11 @@ connectDb();
 const app = express();
 
 // Middlewares
-app.use(cors()); // Enable CORS for all routes
+const corsOptions = {
+  origin: 'https://swap-ease-now.vercel.app',
+  credentials: true,
+}
+app.use(cors(corsOptions))
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(morgan("dev"));
