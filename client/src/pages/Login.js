@@ -15,7 +15,7 @@ const Login = () => {
         type: "SHOW_LOADING",
       });
       const res = await axios.post(
-        "https://business-erp-mern.vercel.app/api/users/login",
+        "https://dent-invent.vercel.app/api/users/login",
         value
       );
       dispatch({ type: "HIDE_LOADING" });
