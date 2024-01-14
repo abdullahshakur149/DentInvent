@@ -19,9 +19,10 @@ const app = express();
 
 // Middlewares
 const corsOptions = {
-  origin: 'https://dent-invent-eefl.vercel.app',
+  origin: '*',
   credentials: true,
 };
+
 app.use(cors(corsOptions));  // <-- Apply cors middleware first
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
