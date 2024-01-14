@@ -1,10 +1,17 @@
 {
   "routes": [
     {
+      "src": "/api/users/register",
+      "methods": ["OPTIONS"],
+      "headers": {
+        "Access-Control-Allow-Origin": "https://dent-invent-eefl.vercel.app"
+      }
+    },
+    {
       "src": "/api/users/login",
       "methods": ["OPTIONS"],
       "headers": {
-        "Access-Control-Allow-Origin": "*"
+        "Access-Control-Allow-Origin": "https://dent-invent-eefl.vercel.app"
       }
     }
   ]
