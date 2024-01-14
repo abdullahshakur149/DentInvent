@@ -19,7 +19,7 @@ const BillsPage = () => {
         type: "SHOW_LOADING",
       });
       const { data } = await axios.get(
-        // "https://business-erp-mern.vercel.app/api/bills/get-bills"
+        "https://dent-invent.vercel.app/api/bills/get-bills"
       );
       setBillsData(data);
       dispatch({ type: "HIDE_LOADING" });
